@@ -1,0 +1,15 @@
+services:
+  - type: worker
+    name: waslnews-monitor
+    runtime: python
+
+    buildCommand: pip install -r requirements.txt
+
+    startCommand: python main.py
+
+    envVars:
+      - key: API_ID
+        sync: false
+
+      - key: API_HASH
+        sync: false
